@@ -11,6 +11,8 @@ The technologies included in this app include the following:
   - node with npm packages: express, mysql, express-handlebars
   
   The folder structure is:
+   
+   
     - config: 
       - connection.js which sets up the connection to the mysql database
       - orm.js creates the methods to make calls to the database to select all the rows,               insert one row, or update a row
