@@ -3,29 +3,41 @@ const express = require("express");
 const router = express.Router();
 
 const burger = require("../models/burger");
-const cat = require("../../../01-Activities/17-CatsApp/Solved/models/cat");
+;
 
 router.get("/", function (req, res) {
     burger.selectAll(function (data) {
-        var burgsObject = {
+        var burgers = {
             burgers: data
         };
-        console.log(burgsObject);
-        res.render("index", burgsObject);
+        console.log(burgers);
+        res.render("index", burgers);
     });
 });
 
 router.post("/api/burgers", function (req, res) {
+    console.log("This is the burger body: " + req.body);
     burger.insertOne([
-        "name", "devoured"
+        "burger_name"
     ], [
-        req.body.name, req.body.devoured
+        req.body.name
     ], function (result) {
-        res.json({ id: result.insertId })
+        burger.selectAll(function (data) {
+            var burgers = {
+                burgers: data
+            };
+            console.log(burgers);
+            res.render("index", burgers);
+        });
+
     });
+
+
 });
 
-router.put("api/burgers/:id", function (req, res) {
+router.put("/api/burgers/:id", function (req, res) {
+    console.log("This is the burger body: " + req.body);
+    console.log("This is the burger body: " + req.body.devoured);
     var condition = "id = " + req.params.id;
 
     console.log("condition", condition);

@@ -1,0 +1,41 @@
+body {
+    display: block;
+    text-align: center;
+    background-color: rgb(248, 155, 78);
+}
+
+
+li {
+    
+    padding: 2px;
+
+}
+
+#burger {
+   
+    margin: 5px;
+}
+
+form {
+    text-align: center;
+    padding: 2px;
+}
+
+h1 {
+    text-align: center;
+    display: inline-flex;
+} 
+
+h1 img {
+    /* float:left; */
+    margin:0 5px 0 0;
+    height: 50px;
+    text-align: center;
+}
+
+div {
+    vertical-align: top;
+    display: inline-block;
+}
+
+
